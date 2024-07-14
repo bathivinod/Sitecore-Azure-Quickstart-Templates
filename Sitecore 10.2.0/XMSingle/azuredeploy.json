@@ -267,7 +267,7 @@
     },
     "authCertificatePassword": {
       "type": "securestring",
-      "minLength": 1
+      "minLength": 0
     },
     "siClientSecret": {
       "type": "securestring",
