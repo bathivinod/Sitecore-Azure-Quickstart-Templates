@@ -69,10 +69,6 @@
         "description": "Sitecore SKU controls the sizes and service levels of the provisioned resources"
       }
     },
-    "repAuthenticationApiKey": {
-      "type": "securestring",
-      "minLength": 32
-    },
 
     "sqlServerName": {
       "type": "string",
@@ -604,7 +600,6 @@
               "sitecoreAdminPassword": "[parameters('sitecoreAdminPassword')]",
               "licenseXml": "[parameters('licenseXml')]",
               "sitecoreSKU": "[parameters('sitecoreSKU')]",
-              "repAuthenticationApiKey": "[parameters('repAuthenticationApiKey')]",
 
               "sqlServerName": "[parameters('sqlServerName')]",
               "sqlServerLogin": "[parameters('sqlServerLogin')]",
