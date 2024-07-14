@@ -61,6 +61,19 @@
       "type": "securestring",
       "minLength": 1
     },
+    "sitecoreSKU": {
+      "type": "string",
+      "allowedValues": [ "Extra Small", "Small", "Medium", "Large", "Extra Large" ],
+      "defaultValue": "Extra Small",
+      "metadata": {
+        "description": "Sitecore SKU controls the sizes and service levels of the provisioned resources"
+      }
+    },
+    "repAuthenticationApiKey": {
+      "type": "securestring",
+      "minLength": 32
+    },
+
     "sqlServerName": {
       "type": "string",
       "minLength": 1,
@@ -339,6 +352,10 @@
           "location": {
             "value": "[parameters('location')]"
           },
+          "sitecoreSKU": {
+            "value": "[parameters('sitecoreSKU')]"
+          },
+
           "sqlServerName": {
             "value": "[parameters('sqlServerName')]"
           },
@@ -586,6 +603,9 @@
               "location": "[parameters('location')]",
               "sitecoreAdminPassword": "[parameters('sitecoreAdminPassword')]",
               "licenseXml": "[parameters('licenseXml')]",
+              "sitecoreSKU": "[parameters('sitecoreSKU')]",
+              "repAuthenticationApiKey": "[parameters('repAuthenticationApiKey')]",
+
               "sqlServerName": "[parameters('sqlServerName')]",
               "sqlServerLogin": "[parameters('sqlServerLogin')]",
               "sqlServerPassword": "[parameters('sqlServerPassword')]",
