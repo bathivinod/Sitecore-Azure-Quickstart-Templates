@@ -279,6 +279,12 @@
       "minLength": 8,
       "defaultValue": "[concat(toUpper(uniqueString('telerik', parameters('passwordSalt'))), uniqueString('telerik', parameters('sqlServerPassword'), parameters('passwordSalt')), toUpper(uniqueString('telerik', parameters('sitecoreAdminPassword'), parameters('passwordSalt'))), '4@')]"
     },
+
+    "allowInvalidClientCertificates": {
+      "type": "bool",
+      "defaultValue": false
+    },
+
     "passwordSalt": {
       "type": "securestring",
       "minLength": 1,
@@ -560,6 +566,11 @@
           "telerikEncryptionKey": {
             "value": "[parameters('telerikEncryptionKey')]"
           },
+
+          "allowInvalidClientCertificates": {
+            "value": "[parameters('allowInvalidClientCertificates')]"
+          },
+
           "passwordSalt": {
             "value": "[parameters('passwordSalt')]"
           },
