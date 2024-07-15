@@ -61,15 +61,6 @@
       "type": "securestring",
       "minLength": 1
     },
-    "sitecoreSKU": {
-      "type": "string",
-      "allowedValues": [ "Extra Small", "Small", "Medium", "Large", "Extra Large" ],
-      "defaultValue": "Extra Small",
-      "metadata": {
-        "description": "Sitecore SKU controls the sizes and service levels of the provisioned resources"
-      }
-    },
-
     "sqlServerName": {
       "type": "string",
       "minLength": 1,
@@ -267,7 +258,7 @@
     },
     "authCertificatePassword": {
       "type": "securestring",
-      "minLength": 0
+      "minLength": 1
     },
     "siClientSecret": {
       "type": "securestring",
@@ -279,12 +270,10 @@
       "minLength": 8,
       "defaultValue": "[concat(toUpper(uniqueString('telerik', parameters('passwordSalt'))), uniqueString('telerik', parameters('sqlServerPassword'), parameters('passwordSalt')), toUpper(uniqueString('telerik', parameters('sitecoreAdminPassword'), parameters('passwordSalt'))), '4@')]"
     },
-
     "allowInvalidClientCertificates": {
       "type": "bool",
       "defaultValue": false
     },
-
     "passwordSalt": {
       "type": "securestring",
       "minLength": 1,
@@ -354,10 +343,6 @@
           "location": {
             "value": "[parameters('location')]"
           },
-          "sitecoreSKU": {
-            "value": "[parameters('sitecoreSKU')]"
-          },
-
           "sqlServerName": {
             "value": "[parameters('sqlServerName')]"
           },
@@ -566,11 +551,9 @@
           "telerikEncryptionKey": {
             "value": "[parameters('telerikEncryptionKey')]"
           },
-
           "allowInvalidClientCertificates": {
             "value": "[parameters('allowInvalidClientCertificates')]"
           },
-
           "passwordSalt": {
             "value": "[parameters('passwordSalt')]"
           },
@@ -610,8 +593,6 @@
               "location": "[parameters('location')]",
               "sitecoreAdminPassword": "[parameters('sitecoreAdminPassword')]",
               "licenseXml": "[parameters('licenseXml')]",
-              "sitecoreSKU": "[parameters('sitecoreSKU')]",
-
               "sqlServerName": "[parameters('sqlServerName')]",
               "sqlServerLogin": "[parameters('sqlServerLogin')]",
               "sqlServerPassword": "[parameters('sqlServerPassword')]",
